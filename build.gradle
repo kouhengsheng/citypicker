@@ -1,28 +1,30 @@
-// Top-level build file where you can add configuration options common to all sub-projects/modules.
-
 buildscript {
     repositories {
+        //阿里云下载jar包速度要快一点，要放在google()、jcenter()之前
+        maven { url 'http://maven.aliyun.com/nexus/content/groups/public/' }
+        maven { url 'http://maven.aliyun.com/nexus/content/repositories/jcenter' }
         jcenter()
         google()
     }
     dependencies {
-        classpath 'com.android.tools.build:gradle:3.2.1'
-        classpath 'com.jfrog.bintray.gradle:gradle-bintray-plugin:1.0'
-        classpath 'com.github.dcendents:android-maven-gradle-plugin:1.4.1'
-        // NOTE: Do not place your application dependencies here; they belong
-        // in the individual module build.gradle files
+        classpath 'com.android.tools.build:gradle:3.4.2'
+        classpath 'com.jfrog.bintray.gradle:gradle-bintray-plugin:1.8.4'
+        classpath 'com.github.dcendents:android-maven-gradle-plugin:2.1'
     }
 }
 
 allprojects {
     repositories {
+        //阿里云下载jar包速度要快一点，要放在google()、jcenter()之前
+        maven { url 'http://maven.aliyun.com/nexus/content/groups/public/' }
+        maven { url 'http://maven.aliyun.com/nexus/content/repositories/jcenter' }
         jcenter()
-
         google()//新增的
         maven { url "https://jitpack.io" }
     }
 }
-
+//项目地址：def siteUrl = 'https://github.com/crazyandcoder/citypicker'
+//项目地址：def siteUrl = 'https://github.com/kouhengsheng/CityPicker-2'
 task clean(type: Delete) {
     delete rootProject.buildDir
 }
